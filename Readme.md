@@ -6,6 +6,9 @@ Before we begin, here are the essential commands you will use throughout this se
 * `docker compose up -d` (Start your environment in the background)
 * `docker compose down` (Stop and remove your environment)
 * `docker compose build` (Build custom images defined in a Dockerfile)
+* `docker compose build --no-cache` (Rebuild images from scratch, ignoring the build cache)
+* `docker compose ps` (List the status of your services)
+* `docker compose logs -f` (Follow logs from your running containers)
 
 ---
 
