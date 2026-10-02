@@ -10,6 +10,8 @@ Before we begin, here are the essential commands you will use throughout this se
 * `docker compose ps` (List the status of your services)
 * `docker compose logs -f` (Follow logs from your running containers)
 
+You can browse available image tags on Docker Hub — this series uses the official [php](https://hub.docker.com/_/php) and [nginx](https://hub.docker.com/_/nginx) images.
+
 ---
 
 ## Part 1: Hello World with PHP (Single Service)
@@ -98,7 +100,7 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "9080:80"
+      - "8080:80"
     volumes:
       - ./:/var/www/html
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
@@ -170,7 +172,7 @@ services:
     volumes:
       - ./:/var/www/html
     depends_on:
-      - php
+      - nginx
   nginx:
     image: nginx:alpine
     ports:
