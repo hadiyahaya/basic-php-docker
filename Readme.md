@@ -166,15 +166,15 @@ Change the `php` service to build from your new Dockerfile instead of downloadin
 ```yaml
 services:
   app:
-    build: 
+    build:
       context: .
       dockerfile: docker/Dockerfile
     volumes:
       - ./:/var/www/html
-    depends_on:
-      - nginx
   nginx:
     image: nginx:alpine
+    depends_on:
+      - app
     ports:
       - "8080:80"
     volumes:
